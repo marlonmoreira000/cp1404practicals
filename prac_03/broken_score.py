@@ -1,7 +1,9 @@
+import random
+
 def main():
     """ Rate university scores """
 
-    score = float(input("Enter score: "))
+    score = int(input("Enter score: "))
     category = categorise_score(score)
     print(category)
 
@@ -17,5 +19,8 @@ def categorise_score(score):
     else:
         return "Excellent"
 
+def generate_random_score():
+    print(random.randint(0, 100))
+    # TODO: I'm not sure how you want me to integrate this function into the main function? Not exactly sure what you are asking for.
 
 main()
