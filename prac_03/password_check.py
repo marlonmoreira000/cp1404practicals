@@ -1,16 +1,30 @@
-""" This program checks if a password is valid length """
 
-MIN_LENGTH = 8
-# minimum number of characters in password
 
-password = str(input("Enter password: "))
-# user inputs their password
+MIN_LENGTH = 8  # minimum number of characters in password
 
-while len(password) < MIN_LENGTH:
-    print("Password must be", MIN_LENGTH, "characters long.")
+
+def main():
+    """ Get and print password using functions """
+    password = get_password()
+    prints_asterisks(password)
+
+
+def get_password():
+    """ Get password from user """
     password = str(input("Enter password: "))
-# check if password is MIN_LENGTH characters long.
+    # user inputs their password
+    while len(password) < MIN_LENGTH:
+        print("Password must be", MIN_LENGTH, "characters long.")
+        password = str(input("Enter password: "))
+        # check if password is MIN_LENGTH characters long.
+    return password
 
-for character in password:
-    print("*", end="")
-    # prints MIN_LENGTH asterisks to signify password is valid.
+
+def prints_asterisks(password):
+    """ Print as many asterisks as there are character in password """
+    for character in password:
+        print("*", end="")
+        # prints MIN_LENGTH asterisks to signify password is valid.
+
+
+main()
