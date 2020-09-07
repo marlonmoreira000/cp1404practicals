@@ -6,7 +6,6 @@ NUMBERS_PER_PICK = 6
 
 
 def main():
-
     number_of_picks = int(input("Number of quick picks: "))
 
     while number_of_picks < 0:
