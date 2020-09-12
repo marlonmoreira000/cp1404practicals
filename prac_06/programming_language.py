@@ -4,7 +4,7 @@
 class ProgrammingLanguage:
 
     def __init__(self, name, typing, reflection, year):
-        """Constructs a programming language with the given inputs"""
+        """Constructs a programming language class with the given inputs"""
         self.name = name
         self.typing = typing
         self.reflection = reflection
