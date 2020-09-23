@@ -1,10 +1,9 @@
+""" This is a program that generates a GUI to convert miles to km """
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.app import StringProperty
 
-__author__ = 'Lindsay Ward'
-
-MILES_TO_KM = 1.60934
+MILES_TO_KM = 1.609
 
 
 class MilesConverterApp(App):
@@ -18,24 +17,18 @@ class MilesConverterApp(App):
         return self.root
 
     def handle_calculate(self):
-        """ handle calculation (could be button press or other call), output result to label widget """
+        """ convert miles to km and display result """
         value = self.get_validated_miles()
         self.message = str(value * MILES_TO_KM)
 
     def handle_increment(self, change):
-        """
-        handle up/down button press, update the text input with new value, call calculation function
-        :param change: the amount to change
-        """
+        """ increment the user_input value upp or down by a fixed number """
         value = self.get_validated_miles() + change
         self.root.ids.input_miles.text = str(value)
         self.handle_calculate()
 
     def get_validated_miles(self):
-        """
-        get text input from text entry widget, convert to float
-        :return: 0 if error, float version of text if valid
-        """
+        """ get user_input text and convert to float if valid """
         try:
             value = float(self.root.ids.input_miles.text)
             return value
